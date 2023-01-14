@@ -20,7 +20,7 @@ The Simple Neural Network is as follows.
 
 
 ### Solution
-1. Please Refer to the ```Assignment1.xlsx``` spreadsheet from ```s3``` folder for the solution. 
+1. Please Refer to the ```Assignment1.xlsx``` spreadsheet from ```s3_assignment_Solutions``` folder for the solution. 
 2. However, the images/screenshots have been attached.
 
 ![alt text](/imgs/lr_0.1.png): The values computed for learning rate = 0.1
@@ -59,40 +59,52 @@ To refactor the existing MNIST digit classification code such that it achieves:
 1. Labels of the corresponding MNIST images for training the Image classifier network.
 
 ### NN Architecture:
-The Net2 architecture is used to solve the assignment. Contains the following layers:
-
-    - 7 convolutional layers
-
-    - 2 MaxPooling layers
-
-    - 3 Linear/Fully connected layers
-
-    ```Inputs:```
-        __Image__ : 1x28x28 (MNIST Image)
-
-        __RandomNumber__: 0-9
+1. Please refer to the ```MNIST_BN_Dropout.ipynb``` Jupyter notebook from ```s3_assignment_Solutions``` folder for the solution.
+```
+    This Model architecture is used to solve the assignment.
+    Contains the following layers:
+        2 convolutional layers
+        1 MaxPooling layers
+        2 Linear/Fully connected layers
+        2 Batch Normalization layers
+        1 Dropout Layer
+        1 Global Average Pooling Layer
+    Inputs:
+        Image : 1x28x28 (MNIST Image)
     
-    ```Outputs:```
-        __label__: Label of the MNIST Image
-
-        __sum_output__: Sum of the predicted label of the MNIST Image and the random number.
+    Outputs:
+        label: Label of the MNIST Image
+```
 
 ### Loss Functions:
 ##### 1. Loss function of the MNIST image classification:
 - Since it is a classification problem, ```nn.CrossEntropyLoss()``` API has been used to compute the cross entropy loss.
 
     ```
-    Loss at Epoch 0: 1.3994579280100272
-    Loss at Epoch 1: 0.2154729304313439
-    Loss at Epoch 2: 0.20129536288048638
-    Loss at Epoch 3: 0.027468014342368747
-    Loss at Epoch 4: 0.007723255454994563
-    Loss at Epoch 5: 0.055382025443283224
-    Loss at Epoch 6: 0.07041706720206276
-    Loss at Epoch 7: 0.004435703824696713
-    Loss at Epoch 8: 0.0015469093507352036
-    Loss at Epoch 9: 0.0031506284465735073 
+    loss=0.9017577171325684 batch_id=234: 100%|██████████████████████████████████████████| 235/235 [00:08<00:00, 26.63it/s]
+    loss=0.38888445496559143 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 27.89it/s]
+    loss=0.3208557367324829 batch_id=234: 100%|██████████████████████████████████████████| 235/235 [00:09<00:00, 25.13it/s]
+    loss=0.1358419507741928 batch_id=234: 100%|██████████████████████████████████████████| 235/235 [00:08<00:00, 27.08it/s]
+    loss=0.14185713231563568 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 27.05it/s]
+    loss=0.2285839319229126 batch_id=234: 100%|██████████████████████████████████████████| 235/235 [00:08<00:00, 27.66it/s]
+    loss=0.0762401819229126 batch_id=234: 100%|██████████████████████████████████████████| 235/235 [00:08<00:00, 27.57it/s]
+    loss=0.058386173099279404 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 27.47it/s]
+    loss=0.09039608389139175 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 27.56it/s]
+    loss=0.09699162095785141 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 26.92it/s]
+    loss=0.08095577359199524 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 27.43it/s]
+    loss=0.05563954636454582 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 26.60it/s]
+    loss=0.052124977111816406 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 27.46it/s]
+    loss=0.05465966835618019 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 28.07it/s]
+    loss=0.11855859309434891 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 28.15it/s]
+    loss=0.015947774052619934 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 27.85it/s]
+    loss=0.060164760798215866 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 28.14it/s]
+    loss=0.05754023417830467 batch_id=234: 100%|█████████████████████████████████████████| 235/235 [00:08<00:00, 28.22it/s]
+    loss=0.043878063559532166 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 27.84it/s]
+    loss=0.007101322989910841 batch_id=234: 100%|████████████████████████████████████████| 235/235 [00:08<00:00, 28.00it/s]
     ```
+#### Testing the model: Loss and Accuracy values:
+The above model on the testing dataset performed as below:
+```Test set: Average loss: 0.0555, Accuracy: 9831/10000 (98%)```
 
 ### Optimizer:
 ```Adam``` Optimizer with learning rate ```lr=0.0001``` has been used as optimizer.
