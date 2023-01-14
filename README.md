@@ -88,6 +88,33 @@ To refactor the existing MNIST digit classification code such that it achieves:
         label: Label of the MNIST Image
 ```
 
+2. CNN Model - model summary: A Network with 19822 trainable parameters has been trained!
+```
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 28, 28]             640
+              ReLU-2           [-1, 64, 28, 28]               0
+       BatchNorm2d-3           [-1, 64, 28, 28]             128
+         MaxPool2d-4           [-1, 64, 14, 14]               0
+            Conv2d-5           [-1, 32, 14, 14]          18,464
+              ReLU-6           [-1, 32, 14, 14]               0
+       BatchNorm2d-7           [-1, 32, 14, 14]              64
+           Dropout-8                   [-1, 32]               0
+            Linear-9                   [-1, 12]             396
+           Linear-10                   [-1, 10]             130
+================================================================
+Total params: 19,822
+Trainable params: 19,822
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.00
+Forward/backward pass size (MB): 1.39
+Params size (MB): 0.08
+Estimated Total Size (MB): 1.47
+----------------------------------------------------------------
+```
+
 ### Loss Functions:
 ##### 1. Loss function of the MNIST image classification:
 - Since it is a classification problem, ```nn.CrossEntropyLoss()``` API has been used to compute the cross entropy loss.
