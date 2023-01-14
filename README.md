@@ -9,6 +9,18 @@
 5. Explain each major step
 6. Show what happens to the error graph when you change the learning rate from [0.1, 0.2, 0.5, 0.8, 1.0, 2.0] 
 
+### Inputs and Outputs:
+Inputs and outputs of the simple NN shown above are as follows:
+![alt text](/imgs/inputs_outputs.png)
+
+#### Note: 
+```
+i1, i2 -> Inputs
+t1, t2 -> Outputs
+```
+
+
+
 __please refer to the ```network.png``` image from the ```/img``` folder__
 The Simple Neural Network is as follows.
 ![alt text](/imgs/network.png) 
